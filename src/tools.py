@@ -268,7 +268,7 @@ def _flowchart_node_quotes(flowchart_text: str, node_ids: List[str]) -> List[Tup
     return [(node_id, nodes[node_id]) for node_id in dict.fromkeys(node_ids) if node_id in nodes]
 
 
-def load_flowchart(entity_slug: str = None, branch_path: str = None) -> str:
+def load_flowchart(entity_slug: str = None, branch_path: str = None, flowchart_dir: Path = None) -> str:
     """
     Load flowchart from data/flowchart/{entity_slug}.txt.
 
@@ -280,7 +280,7 @@ def load_flowchart(entity_slug: str = None, branch_path: str = None) -> str:
     if not entity_slug:
         return ""
 
-    flowchart_file = DATA_DIR / 'flowchart' / f'{entity_slug}.txt'
+    flowchart_file = (Path(flowchart_dir) if flowchart_dir else DATA_DIR / 'flowchart') / f'{entity_slug}.txt'
 
     if flowchart_file.exists():
         flowchart_text = flowchart_file.read_text(encoding='utf-8')
@@ -1225,8 +1225,10 @@ def _decide_with_guideline(case: Dict, config: Dict, args: Dict) -> Dict:
 
     # Truncate flowchart_path for display (max 60 chars)
     path = args.get('flowchart_path', '')
-    full_flowchart_text = load_flowchart(entity_slug)
-    flowchart_text = load_flowchart(entity_slug, branch_path=path)
+    flowchart_dir = config.get('flowchart_dir')
+    full_flowchart_text = load_flowchart(entity_slug, flowchart_dir=flowchart_dir)
+    flowchart_text = load_flowchart(entity_slug, branch_path=path, flowchart_dir=flowchart_dir)
+    flowchart_source = str((Path(flowchart_dir) if flowchart_dir else DATA_DIR / 'flowchart') / f'{entity_slug}.txt')
     path_short = (path[:60] + "...") if len(path) > 60 else path
     path_info = f" → {path_short}" if path_short else ""
     logger.info(f"  {TREE_BRANCH} Flowchart: {entity_slug} ({len(flowchart_text)} chars){path_info}")
@@ -1234,7 +1236,7 @@ def _decide_with_guideline(case: Dict, config: Dict, args: Dict) -> Dict:
 
     flowchart = [{
         "content": flowchart_text,
-        "source_file": "flowchart.txt",
+        "source_file": flowchart_source,
         "similarity_score": 1.0
     }]
 
@@ -1258,7 +1260,7 @@ def _decide_with_guideline(case: Dict, config: Dict, args: Dict) -> Dict:
     guideline_hits = []
     for node_id, quote in _flowchart_node_quotes(full_flowchart_text, node_ids):
         guideline_hits.append({
-            'source_file': f'data/flowchart/{entity_slug}.txt',
+            'source_file': flowchart_source,
             'path': path,
             'node_id': node_id,
             'key_finding_zh': args.get('reasoning', ''),
@@ -1267,7 +1269,7 @@ def _decide_with_guideline(case: Dict, config: Dict, args: Dict) -> Dict:
     if not guideline_hits:
         fallback_nodes = _flowchart_node_quotes(full_flowchart_text, node_ids)
         guideline_hits.append({
-            'source_file': f'data/flowchart/{entity_slug}.txt',
+            'source_file': flowchart_source,
             'path': path,
             'key_finding_zh': args.get('reasoning', ''),
             'quote': re.sub(r'\s+', ' ', '\n\n'.join(quote for _, quote in fallback_nodes)).strip(),
@@ -1290,7 +1292,7 @@ def _decide_with_guideline(case: Dict, config: Dict, args: Dict) -> Dict:
     expanded_quotes = _flowchart_node_quotes(full_flowchart_text, expanded_node_ids)
     if expanded_quotes:
         decision['evidence_hits']['guidelines'] = [{
-            'source_file': f'data/flowchart/{entity_slug}.txt',
+            'source_file': flowchart_source,
             'path': path,
             'node_id': node_id,
             'key_finding_zh': args.get('reasoning', ''),
@@ -1308,7 +1310,7 @@ def _decide_with_guideline(case: Dict, config: Dict, args: Dict) -> Dict:
 
 def _decide_advanced(case: Dict, config: Dict, args: Dict) -> Dict:
     """ADVANCED mode: Similar cases + PubMed combined."""
-    db_path = KB_STORAGE_DIR / 'chroma_db'
+    db_path = Path(config.get('kb_storage_dir', KB_STORAGE_DIR)) / 'chroma_db'
     entity_slug = case.get('entity_slug')
     if entity_slug == 'fallback':
         entity_slug = None  # Cross-entity retrieval for unrecognized diagnoses

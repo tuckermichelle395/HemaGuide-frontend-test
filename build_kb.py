@@ -72,11 +72,13 @@ def build_tb_kb(
     api_key: str,
     llm_mode: str,
     embedding_model: str | None,
-    embedding_mode: str
+    embedding_mode: str,
+    extracted_data_dir: Path = EXTRACTED_DATA_DIR,
+    kb_storage_dir: Path = KB_STORAGE_DIR,
 ):
     """Build tumor board knowledge base from .docx files."""
     # Setup cache directory
-    cache_dir = EXTRACTED_DATA_DIR / 'kb_input' / 'tumorboards'
+    cache_dir = Path(extracted_data_dir) / 'kb_input' / 'tumorboards'
     cache_dir.mkdir(parents=True, exist_ok=True)
 
     total = len(docx_files)
@@ -133,7 +135,7 @@ def build_tb_kb(
     logger.info(f"Extracted {len(extracted_docs)} documents")
 
     # Build or update KB
-    db_path = KB_STORAGE_DIR / 'chroma_db'
+    db_path = Path(kb_storage_dir) / 'chroma_db'
 
     if rebuild:
         logger.info(f"{TREE_BRANCH} Clearing existing collection...")
@@ -189,6 +191,12 @@ Examples:
                        help='Override default embedding model for chosen mode (ollama: embeddinggemma:300m, openai: text-embedding-3-large)')
     parser.add_argument('--rebuild', action='store_true',
                        help='Force rebuild knowledge base (clear existing)')
+    parser.add_argument('--kb-dir', type=Path, default=KB_TUMORBOARDS_DIR,
+                       help='Directory containing historical-case .docx files (default: kb_input/tumorboards/)')
+    parser.add_argument('--extracted-data-dir', type=Path, default=EXTRACTED_DATA_DIR,
+                       help='Directory for extracted JSON cache (default: extracted_data/)')
+    parser.add_argument('--kb-storage-dir', type=Path, default=KB_STORAGE_DIR,
+                       help='Directory for ChromaDB storage (default: kb_storage/)')
 
     args = parser.parse_args()
 
@@ -211,11 +219,12 @@ Examples:
         api_key = 'ollama'
 
     # Find docx files first (for count in header)
-    docx_files = src.find_files(KB_TUMORBOARDS_DIR, "*.docx")
+    kb_dir = args.kb_dir
+    docx_files = src.find_files(kb_dir, "*.docx")
     docx_files = [f for f in docx_files if not f.name.startswith('~')]
 
     if not docx_files:
-        logger.error(f"No .docx files found in {KB_TUMORBOARDS_DIR}")
+        logger.error(f"No .docx files found in {kb_dir}")
         sys.exit(1)
 
     # Resolve embedding model for logging
@@ -235,7 +244,7 @@ Examples:
         start_time = datetime.now()
 
         # Build tumor board KB
-        db_path = KB_STORAGE_DIR / 'chroma_db'
+        db_path = args.kb_storage_dir / 'chroma_db'
         if args.rebuild or not src.collection_exists(db_path, 'tumorboards'):
             build_tb_kb(
                 docx_files=docx_files,
@@ -244,7 +253,9 @@ Examples:
                 api_key=api_key,
                 llm_mode=args.llm_mode,
                 embedding_model=args.embedding_model,
-                embedding_mode=args.embedding_mode
+                embedding_mode=args.embedding_mode,
+                extracted_data_dir=args.extracted_data_dir,
+                kb_storage_dir=args.kb_storage_dir,
             )
         else:
             count = src.get_collection_count(db_path, 'tumorboards')

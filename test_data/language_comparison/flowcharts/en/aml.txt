@@ -1,0 +1,52 @@
+English structured treatment flowchart - AML / APL
+Scope: English rendering of the local AML treatment pathway used for language-controlled testing.
+The pathway is a structured summary of the version-controlled local guideline flowchart; it is not a verbatim guideline and does not replace clinical judgment.
+
+General principles:
+- Confirm disease entity, treatment phase, genetic risk, MRD status, fitness, organ function and transplant eligibility.
+- Integrate morphology, immunophenotype, cytogenetics, fusion testing and molecular testing.
+- Consider clinical trials whenever available; account for drug access, transplant resources and patient preferences.
+- Treatment recommendations must address induction or low-intensity therapy, response assessment, consolidation, MRD monitoring, transplant and supportive care.
+
+Branch AML-0: Information integration and risk stratification
+Applicable when an AML/APL case enters treatment decision-making.
+Key checks: disease entity, genetic risk, treatment phase, fitness, urgent complications and an actionable MRD marker.
+Recommended path: resolve missing diagnostic information before committing to a treatment pathway.
+
+Branch AML-1: Suspected or confirmed APL
+Start urgent ATRA when APL is strongly suspected; manage coagulopathy and differentiation syndrome risk while confirming PML::RARA.
+
+Branch AML-5: Newly diagnosed non-APL AML, fit for intensive therapy
+Use genetic risk, core-binding-factor status, actionable mutations and MRD strategy to select induction and post-remission treatment.
+
+Branch AML-7: Newly diagnosed AML with FLT3 alteration
+Discuss an FLT3-directed strategy where indicated and define MRD monitoring and transplant planning.
+
+Branch AML-8: Therapy-related, MDS-related, complex-karyotype, TP53-mutated or otherwise adverse-risk AML
+Integrate disease biology, fitness, clinical-trial access and transplant intent; avoid treating age as the sole intensity criterion.
+
+Branch AML-9: Not fit for intensive therapy or declines intensive therapy
+Consider lower-intensity therapy, supportive care and clinical trials according to fitness, comorbidity, disease biology and patient goals.
+
+Branch AML-10: Persistent disease or induction failure
+Reassess morphology, genetics and MRD; consider salvage therapy, targeted treatment and transplant or trial pathways.
+
+Branch AML-11: Consolidation and maintenance after complete remission
+Use genetic risk, MRD and transplant eligibility to determine consolidation, maintenance and allogeneic transplant strategy.
+
+Branch AML-12: Relapsed or refractory non-APL AML
+Classify relapse type, repeat or review genetics and actionable targets, and select targeted therapy, salvage therapy, clinical trial or supportive care.
+
+Branch AML-12A: Relapsed/refractory AML output principle
+Applicable to relapsed/refractory AML or failure of multiple prior lines.
+Recommended path:
+- Recheck genetics and actionable targets, especially FLT3, IDH1, IDH2, NPM1, TP53, CD33 and MRD markers.
+- If an actionable alteration is present, prioritize targeted therapy or a clinical trial as disease control or a bridge to transplant.
+- If no targeted option is available, select intensive or lower-intensity salvage according to fitness and prior therapy.
+- State whether the goal is curative bridging, response induction, survival prolongation or symptom control.
+
+Branch AML-13: Insufficient or conflicting information
+State uncertainty explicitly, identify the missing data and avoid overconfident treatment selection.
+
+Branch AML-14: AML MRD pathway
+Define a disease-specific MRD marker, monitor at clinically meaningful time points and integrate MRD dynamics with genetic risk and transplant decisions.

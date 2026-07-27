@@ -19,4 +19,4 @@
 PYTHON_BIN=.venv/bin/python bash scripts/run_language_comparison.sh
 ```
 
-PubMed/Crossref 默认开启；如需只观察病例和流程图影响，可设置 `DISABLE_PUBMED=1 DISABLE_CONFERENCE=1`。结果写入 `results/language_comparison/<时间>/`。
+脚本会直接把病例、知识库、流程图和抽取缓存传给程序参数，不覆盖默认目录。PubMed/Crossref 默认开启；如需只观察病例和流程图影响，可设置 `DISABLE_PUBMED=1 DISABLE_CONFERENCE=1`。结果写入 `results/language_comparison/<时间>/`，并生成 `language_comparison.md` 和 `language_comparison.csv`。

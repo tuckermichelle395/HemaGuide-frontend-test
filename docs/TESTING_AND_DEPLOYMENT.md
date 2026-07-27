@@ -19,6 +19,13 @@ PYTHON_BIN=.venv/bin/python bash scripts/run_all_tests.sh
 PYTHON_BIN=.venv/bin/python bash scripts/run_language_comparison.sh
 ```
 
+语言结果比较也会由上述脚本自动生成；单独比较已有结果：
+
+```bash
+PYTHON_BIN=.venv/bin/python scripts/compare_language_results.py \
+  --input-dir results/language_comparison/<时间目录>
+```
+
 后台运行：
 
 ```bash

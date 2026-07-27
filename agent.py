@@ -98,7 +98,7 @@ def run_agent(case: Dict, config: Dict) -> Dict:
 
     # Load entity-specific flowchart
     ignore_flowchart = config.get('ignore_flowchart', False)
-    flowchart = '' if ignore_flowchart else load_flowchart(entity_slug)
+    flowchart = '' if ignore_flowchart else load_flowchart(entity_slug, flowchart_dir=config.get('flowchart_dir'))
     if ignore_flowchart:
         logger.info(f"  {TREE_BRANCH} Flowchart ignored by --ignore-flowchart")
     if not flowchart and entity_slug != 'fallback':
@@ -387,6 +387,14 @@ Examples:
                        help=f'Decision output directory (default: {OUTPUT_DIR})')
     parser.add_argument('--case-id',
                        help='Process only the query whose filename stem matches this value')
+    parser.add_argument('--query-dir', type=Path, default=QUERY_INPUT_DIR,
+                       help='Directory containing query .docx files (default: query_input/)')
+    parser.add_argument('--extracted-data-dir', type=Path, default=EXTRACTED_DATA_DIR,
+                       help='Directory containing extracted JSON files (default: extracted_data/)')
+    parser.add_argument('--kb-storage-dir', type=Path, default=KB_STORAGE_DIR,
+                       help='Directory containing ChromaDB storage (default: kb_storage/)')
+    parser.add_argument('--flowchart-dir', type=Path, default=Path('./data/flowchart'),
+                       help='Directory containing entity flowchart .txt files (default: data/flowchart/)')
     args = parser.parse_args()
 
     # Resolve model based on mode (matching plain_llm.py behavior)
@@ -408,8 +416,9 @@ Examples:
     src.setup_logging(level='INFO')
 
     # Validate queries
-    cache_dir = EXTRACTED_DATA_DIR / 'query_input'
-    is_valid, _, _, files = src.validate_query_extractions(QUERY_INPUT_DIR, cache_dir)
+    query_dir = args.query_dir
+    cache_dir = args.extracted_data_dir / 'query_input'
+    is_valid, _, _, files = src.validate_query_extractions(query_dir, cache_dir)
     if not is_valid:
         logger.error("Run 'python process_query_input.py' first")
         sys.exit(1)
@@ -433,6 +442,10 @@ Examples:
         'disable_case_retrieval': args.disable_case_retrieval,
         'disable_pubmed_retrieval': args.disable_pubmed_retrieval,
         'disable_conference_retrieval': args.disable_conference_retrieval,
+        'query_dir': query_dir,
+        'extracted_data_dir': args.extracted_data_dir,
+        'kb_storage_dir': args.kb_storage_dir,
+        'flowchart_dir': args.flowchart_dir,
     }
 
     logger.info("═" * 60)

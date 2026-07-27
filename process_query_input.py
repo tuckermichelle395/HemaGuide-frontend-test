@@ -57,10 +57,11 @@ def process_query_documents(
     extraction_model: str,
     llm_mode: str,
     force_extract: bool,
-    api_key: str
+    api_key: str,
+    extracted_data_dir: Path = EXTRACTED_DATA_DIR,
 ):
     """Extract all query documents to cache."""
-    cache_dir = EXTRACTED_DATA_DIR / 'query_input'
+    cache_dir = Path(extracted_data_dir) / 'query_input'
     cache_dir.mkdir(parents=True, exist_ok=True)
 
     # Clear cache if force extract
@@ -156,6 +157,10 @@ Examples:
                        help='Force re-extraction (clear cache first)')
     parser.add_argument('--api-key',
                        help='API key (default: from environment)')
+    parser.add_argument('--query-dir', type=Path, default=QUERY_INPUT_DIR,
+                       help='Directory containing query .docx files (default: query_input/)')
+    parser.add_argument('--extracted-data-dir', type=Path, default=EXTRACTED_DATA_DIR,
+                       help='Directory for extracted JSON cache (default: extracted_data/)')
 
     args = parser.parse_args()
 
@@ -180,12 +185,13 @@ Examples:
         api_key = 'ollama'
 
     # Find query files first (for count in header)
-    query_files = src.find_files(QUERY_INPUT_DIR, "*.docx")
+    query_dir = args.query_dir
+    query_files = src.find_files(query_dir, "*.docx")
     query_files = [f for f in query_files if not f.name.startswith('~')]
 
     if not query_files:
-        logger.warning(f"No .docx files found in {QUERY_INPUT_DIR}")
-        logger.info("Add query documents to query_input/ directory")
+        logger.warning(f"No .docx files found in {query_dir}")
+        logger.info(f"Add query documents to {query_dir} or pass --query-dir")
         sys.exit(0)
 
     # Log configuration with box-drawing header
@@ -204,7 +210,8 @@ Examples:
             extraction_model=extraction_model,
             llm_mode=args.llm_mode,
             force_extract=args.force_extract,
-            api_key=api_key
+            api_key=api_key,
+            extracted_data_dir=args.extracted_data_dir,
         )
 
         # Summary
