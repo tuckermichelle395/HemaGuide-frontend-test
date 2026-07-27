@@ -81,6 +81,14 @@ Without this file, hotspot criteria will use the cancerhotspots.org API only.
 
 ### 2. CLI (run first to process data)
 
+#### 一键测试与结果汇总
+
+```bash
+PYTHON_BIN=.venv/bin/python bash scripts/run_all_tests.sh
+```
+
+该脚本会在单个步骤报错后继续执行，并在运行目录下生成日志、JSON、`summary.md` 和 `summary.csv`。模型通过 `LLM_MODEL`、`DECISION_MODEL` 等环境变量配置，默认使用 `qwen3:8b`。详细的 JumpServer 部署步骤见 [`docs/TESTING_AND_DEPLOYMENT.md`](docs/TESTING_AND_DEPLOYMENT.md)。
+
 ```bash
 python build_kb.py              # Build knowledge base
 python process_query_input.py   # Extract queries

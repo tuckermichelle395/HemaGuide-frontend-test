@@ -44,12 +44,12 @@ MODE_CONFIGS = {
         'parallel': True,
     },
     'ollama-local': {
-        'default_decision_model': 'gpt-oss:120b',
+        'default_decision_model': 'qwen3:8b',
         'api_key_env': None,  # Uses 'ollama' literal
         'parallel': False,
     },
     'ollama-cloud': {
-        'default_decision_model': 'gpt-oss:120b',
+        'default_decision_model': 'qwen3:8b',
         'api_key_env': 'OLLAMA_API_KEY',
         'parallel': True,
     },

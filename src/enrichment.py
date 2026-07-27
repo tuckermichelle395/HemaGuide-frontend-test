@@ -49,7 +49,7 @@ def is_enriched(document: Dict) -> bool:
 def enrich_document(
     document: Dict,
     output_subdir: str,
-    model: str = "gpt-oss:120b",
+    model: str = "qwen3:8b",
     llm_mode: str = None,
     api_key: str = None,
 ) -> Dict:
@@ -158,7 +158,7 @@ def enrich_document(
 
 def enrich_similar_cases(
     similar_cases: List[Dict],
-    model: str = "gpt-oss:120b",
+    model: str = "qwen3:8b",
     llm_mode: str = None,
     api_key: str = None,
 ) -> List[Dict]:

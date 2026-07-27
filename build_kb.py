@@ -40,11 +40,11 @@ MODE_CONFIGS = {
         'api_key_env': 'OPENAI_API_KEY',
     },
     'ollama-local': {
-        'default_extraction_model': 'gpt-oss:120b',
+        'default_extraction_model': 'qwen3:8b',
         'api_key_env': None,  # Uses 'ollama' literal
     },
     'ollama-cloud': {
-        'default_extraction_model': 'gpt-oss:120b',
+        'default_extraction_model': 'qwen3:8b',
         'api_key_env': 'OLLAMA_API_KEY',
     },
 }

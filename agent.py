@@ -65,11 +65,11 @@ MODE_CONFIGS = {
         'api_key_env': 'OPENAI_API_KEY',
     },
     'ollama-local': {
-        'default_decision_model': 'gpt-oss:120b',
+        'default_decision_model': 'qwen3:8b',
         'api_key_env': None,
     },
     'ollama-cloud': {
-        'default_decision_model': 'gpt-oss:120b',
+        'default_decision_model': 'qwen3:8b',
         'api_key_env': 'OLLAMA_API_KEY',
     },
 }

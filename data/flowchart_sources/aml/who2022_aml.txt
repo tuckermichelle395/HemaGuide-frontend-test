@@ -1,0 +1,161 @@
+中文结构化诊断流程图 - WHO 2022 AML 分类
+来源范围：本地《The 5th edition of the World Health Organization Classification of Haematolymphoid Tumours: Myeloid and Histiocytic/Dendritic Neoplasms》human_visual.md。
+来源文件：01_WHO2022-AML分型_human_visual.md。
+注意：本文件提取的是分类、诊断和鉴别框架，不提供原文没有给出的具体治疗方案；不替代病理会诊和临床决策。
+
+总原则：
+- AML 分类首先区分“具有定义性遗传异常的 AML”和“按分化定义的 AML”。
+- 诊断必须整合临床背景、形态学、免疫表型、细胞遗传学和分子遗传学，不能只凭单个结果机械归类。
+- 多数具有定义性遗传异常的 AML 不再要求达到 20% 原始细胞；WHO 文中明确 BCR::ABL1 融合和 CEBPA 突变 AML 仍要求至少 20% 原始细胞。
+- 先排除定义性遗传类别；缺少定义性遗传异常时，才进入按分化定义的 AML。
+- “治疗后细胞毒暴露”和“胚系易感”应作为符合条件的髓系肿瘤实体后的限定属性，不应取代主诊断实体。
+- WHO 2022 与 ICC 2022 的阈值和类别并非完全一致，输出时必须注明采用 WHO 2022 体系。
+- 输出语言：最终建议使用简体中文。
+
+分支 AML-100：急性髓系白血病的 WHO 2022 初始归类
+适用条件：
+- 形态学、流式或遗传学提示急性髓系白血病，需要确定 WHO 2022 实体。
+关键判断：
+- 是否存在 PML::RARA、RUNX1::RUNX1T1、CBFB::MYH11、DEK::NUP214、RBM15::MRTFA、BCR::ABL1、KMT2A、MECOM、NUP98、NPM1 或 CEBPA 等定义性异常。
+- 是否符合 AML，髓系增生异常相关（AML-MR）。
+- 若没有定义性遗传异常，是否满足按分化定义的 AML，且已排除 MPAL。
+输出要求：
+- 先给出主实体，再补充治疗后细胞毒暴露、既往 MDS/MDS-MPN、胚系易感等属性。
+- 同时说明原始细胞比例、所用遗传证据和需要排除的重叠疾病。
+来源定位：ACUTE MYELOID LEUKAEMIA；Table 7。
+
+分支 AML-101：具有定义性遗传异常的 AML
+适用条件：
+- 检出 AML 定义性融合、重排或突变。
+定义性类别：
+- APL with PML::RARA。
+- AML with RUNX1::RUNX1T1、CBFB::MYH11、DEK::NUP214、RBM15::MRTFA 或 BCR::ABL1。
+- AML with KMT2A、MECOM 或 NUP98 rearrangement。
+- AML with NPM1 mutation、AML with CEBPA mutation。
+- AML-MR 以及 AML with other defined genetic alterations。
+判断路径：
+- 将定义性遗传异常与形态学和疾病表型关联，确认该异常确实驱动当前疾病。
+- KMT2A、MECOM、NUP98 重排可能在常规核型中隐匿；必要时采用 FISH、RNA 或其他分子方法补充。
+- 尽可能报告融合伴侣，因为可能影响预后解释和后续监测。
+来源定位：AML with defining genetic abnormalities；Table 7。
+
+分支 AML-102：NPM1 和 CEBPA 突变 AML
+适用条件：
+- 检出 NPM1 或 CEBPA 突变，需要确定是否构成 WHO 实体。
+关键判断：
+- NPM1 突变 AML 可不受固定原始细胞阈值限制，但必须进行审慎的临床病理对应。
+- CEBPA 实体包括双等位基因突变，也包括位于 bZIP 区域的单突变；WHO 文中仍保留至少 20% 原始细胞要求。
+- 单纯 RUNX1 突变不再构成独立 WHO AML 实体。
+输出要求：
+- 报告 NPM1 或 CEBPA 的具体异常类型和原始细胞比例。
+- CEBPA 应明确是否为 bZIP 区域突变以及单/双等位状态。
+来源定位：AML with defining genetic abnormalities；Table 7。
+
+分支 AML-103：AML，髓系增生异常相关（AML-MR）
+适用条件：
+- AML 伴特定 MDS 相关遗传异常，或由既往 MDS/MDS-MPN 转化。
+适用标准：
+- 具有髓系免疫表型并达到 AML-MR 所需原始细胞条件。
+- 存在 AML-MR 定义性细胞遗传学异常，或 ASXL1、BCOR、EZH2、SF3B1、SRSF2、STAG2、U2AF1、ZRSR2 中至少一个定义性体细胞突变，或有符合要求的既往 MDS/MDS-MPN。
+- 细胞遗传学异常包括复杂核型，以及 5q、7/7q、11q、12p、13/13q、17p、i(17q)、idic(X)(q13) 等规定异常。
+排除与优先级：
+- 形态学多系发育异常本身不再足以定义 AML-MR。
+- 先排除其他定义性遗传 AML 实体。
+输出要求：
+- 明确是由细胞遗传学、分子突变还是既往病史支持 AML-MR。
+来源定位：AML with defining genetic abnormalities；Table 8。
+
+分支 AML-104：缺少定义性遗传异常时按分化定义 AML
+适用条件：
+- 达到 AML 原始细胞要求，但未发现定义性遗传异常。
+分类路径：
+- 最小分化型：细胞化学 MPO/SBB 阴性或极低，并表达两个或以上髓系相关抗原。
+- 无成熟型：MPO/SBB 阳性，粒系成熟细胞不足 10%。
+- 有成熟型：MPO/SBB 阳性，粒系成熟细胞至少 10%，单核细胞系列不足 20%。
+- 急性嗜碱粒细胞白血病、急性粒单核细胞白血病、急性单核细胞白血病、急性红系白血病、急性巨核细胞白血病按各自形态和免疫标准判断。
+排除：
+- 不满足定义性遗传 AML、MPAL、治疗后髓系肿瘤或既往 MPN 转化的相应分类条件。
+来源定位：AML defined by differentiation；Table 9。
+
+分支 AML-105：急性红系或急性巨核细胞白血病
+适用条件：
+- 红系或巨核细胞分化占优势，常规 AML 分类不能充分解释。
+关键判断：
+- 急性红系白血病通常骨髓红系占比至少 80%，其中原红细胞至少 30%；少数低于 80% 但具有一致临床病理特征的病例仍需综合判断。
+- 急性红系白血病常伴双等位 TP53 异常，且其诊断优先于 AML-MR。
+- 急性巨核细胞白血病需用 CD41、CD61 或 CD42b 等巨核细胞分化标志支持。
+- 儿童病例需结合是否有 Down 综合征及 CBFA2T3::GLIS2 等驱动异常。
+来源定位：AML defined by differentiation；Table 9。
+
+分支 AML-106：髓系肉瘤
+适用条件：
+- 组织中出现髓系肿瘤性浸润，骨髓可有或无明显 AML。
+关键判断：
+- 判断为原发髓系肉瘤，还是 AML、MDS、MDS/MPN、MPN 转化的组织表现。
+- 对原发病例进行全面细胞遗传学和分子检测，以归入相应遗传实体并规划治疗。
+- 骨髓形态正常并不能排除低水平克隆性髓系疾病。
+来源定位：Myeloid sarcoma。
+
+分支 AML-107：细胞毒治疗后髓系肿瘤
+适用条件：
+- AML/MDS/MDS-MPN 发生在既往接受 DNA 损伤性化疗或大野放疗之后。
+关键判断：
+- 患者必须先满足具体髓系肿瘤实体的诊断标准。
+- 既往细胞毒暴露作为“post cytotoxic therapy”属性附加在主实体之后。
+- 不把暴露史单独当成一个替代遗传和形态分类的主实体。
+- 注意既存克隆性造血在治疗选择压力下扩增的可能性。
+来源定位：SECONDARY MYELOID NEOPLASMS；Myeloid neoplasms post cytotoxic therapy。
+
+分支 AML-108：胚系易感相关髓系肿瘤
+适用条件：
+- 家族史、先天异常、血小板疾病、器官功能异常或分子结果提示遗传性易感。
+分组：
+- 无既存血小板疾病或器官功能障碍：如 CEBPA、DDX41 等。
+- 伴既存血小板疾病：如 RUNX1、ANKRD26、ETV6。
+- 伴潜在多器官功能异常或骨髓衰竭综合征：如 GATA2、SAMD9/SAMD9L、Fanconi 贫血、端粒生物学疾病等。
+输出要求：
+- 先给出符合标准的髓系肿瘤实体，再附加具体胚系基因/综合征。
+- 说明胚系确认会影响家系筛查和移植供者选择。
+来源定位：Myeloid neoplasms associated with germline predisposition；Table 10。
+
+分支 AML-109：伴嗜酸性粒细胞增多和酪氨酸激酶融合的髓系/淋巴系肿瘤
+适用条件：
+- 嗜酸性粒细胞增多，伴慢性髓系、AML、ALL、MPAL 或髓外肿瘤表现。
+关键检测：
+- PDGFRA、PDGFRB、FGFR1、JAK2、FLT3 rearrangement，ETV6::ABL1。
+- 其他定义性 TK 融合包括 ETV6::FGFR2、ETV6::LYN、ETV6::NTRK3、RANBP2::ALK、BCR::RET、FGFR1OP::RET。
+输出要求：
+- 优先按 TK 融合实体归类，而不是仅按 AML 形态命名。
+- 同时记录慢性期、急性白血病、MPAL 或髓外表现。
+来源定位：MYELOID/LYMPHOID NEOPLASMS WITH EOSINOPHILIA AND TYROSINE KINASE GENE FUSIONS；Table 11。
+
+分支 AML-110：急性混合或未定谱系白血病
+适用条件：
+- 原始细胞不能明确归入单一髓系、B 系或 T 系，或同时满足多个谱系标准。
+分类路径：
+- 定义性遗传异常：MPAL with BCR::ABL1、MPAL with KMT2A rearrangement、MPAL with ZNF384 rearrangement、ALAL with BCL11B rearrangement。
+- 免疫表型定义：B/myeloid MPAL、T/myeloid MPAL、罕见 MPAL、ALAL NOS、急性未分化白血病。
+注意：
+- BCL11B 重排可横跨 ALAL、T/myeloid MPAL、ETP-ALL 和部分低分化 AML，应承认生物学连续谱并进行综合判定。
+来源定位：ACUTE LEUKAEMIAS OF MIXED OR AMBIGUOUS LINEAGE；Table 12。
+
+分支 AML-111：MPAL 谱系指派
+适用条件：
+- 需要依据免疫表型确认 B、T 或髓系谱系。
+判断标准：
+- B 系：强 CD19 加至少一个强表达 CD10/CD22/CD79a；弱 CD19 则需至少两个强表达伴随标志。
+- T 系：胞浆或表面 CD3 达到规定强度，或免疫细胞化学符合标准。
+- 髓系：MPO 达到规定强度；或表达 NSE、CD11c、CD14、CD64、溶菌酶中至少两个以支持单核分化。
+解释原则：
+- 同时考虑抗原强度、表达模式及同一谱系多个抗原的协调表达。
+- MPO 低水平表达的阈值存在不确定性，不应脱离整体表型机械分类。
+来源定位：Table 13。
+
+分支 AML-112：BPDCN 与 AML/pDC 增殖的鉴别
+适用条件：
+- CD4/CD56/CD123 阳性或存在浆细胞样树突细胞增殖，需要与 AML 及其他肿瘤鉴别。
+关键判断：
+- BPDCN 预期表达 CD123、TCF4、TCL1、CD303、CD304，并常见 CD4/CD56；预期缺乏 CD3、CD14、CD19、CD34、溶菌酶和 MPO。
+- 诊断组合可采用 CD123 加另一个 pDC 标志并伴 CD4 和/或 CD56，或三个 pDC 标志且所有预期阴性标志缺失。
+- AML 可伴与白血病克隆相关的成熟 pDC 增殖，尤其可见于 RUNX1 突变背景，不应自动归为 BPDCN。
+来源定位：Plasmacytoid dendritic cell neoplasms；Table 15。

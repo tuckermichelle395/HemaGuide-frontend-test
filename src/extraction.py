@@ -55,7 +55,7 @@ __all__ = [
 # CONSTANTS
 # ============================================================================
 
-DEFAULT_MODEL = "gpt-oss:120b"
+DEFAULT_MODEL = "qwen3:8b"
 DEFAULT_TEMPERATURE = 0.1
 MAX_RETRIES = 2
 DEBUG_DIR = Path('./extracted_data/json_debug')

@@ -86,7 +86,7 @@ if ! curl -s http://localhost:11434/api/tags &> /dev/null; then
 fi
 
 # --- Check Ollama models ---
-DECISION_MODEL="gpt-oss:120b"
+DECISION_MODEL="${DECISION_MODEL:-qwen3:8b}"
 EMBEDDING_MODEL="embeddinggemma:300m"
 
 for MODEL in "$DECISION_MODEL" "$EMBEDDING_MODEL"; do

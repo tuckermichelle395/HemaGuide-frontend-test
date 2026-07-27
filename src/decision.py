@@ -42,7 +42,7 @@ __all__ = [
 # CONSTANTS
 # ============================================================================
 
-DEFAULT_DECISION_MODEL = "gpt-oss:120b"
+DEFAULT_DECISION_MODEL = "qwen3:8b"
 DEFAULT_TEMPERATURE = 0.3
 MAX_RETRIES = 3
 RETRY_DELAY_SECONDS = 1
@@ -451,7 +451,7 @@ def _call_llm_decision(
 
     Args:
         messages: List of message dicts (system + user)
-        model: Model identifier (e.g., 'gpt-oss:120b', 'llama3')
+        model: Model identifier (e.g., 'qwen3:8b', 'llama3')
         llm_mode: Backend mode ('openai', 'ollama-local', 'ollama-cloud')
         llm_api_key: API key for the LLM service
         temperature: Sampling temperature

@@ -1,0 +1,163 @@
+中文结构化诊断流程图 - ICC 2022 AML 分类
+来源范围：本地《International Consensus Classification of Myeloid Neoplasms and Acute Leukemias》human_visual.md。
+来源文件：01_ICC2022_human_visual.md。
+注意：本文件用于 ICC 诊断分类与鉴别，不提供原文未给出的治疗处方；不替代病理会诊和临床决策。
+
+总原则：
+- ICC 强调形态、临床和基因组整合，并采用具有优先级的遗传分类层级。
+- 多数 AML 定义性重现遗传异常在骨髓或外周血原始细胞达到 10% 时即可定义 AML；BCR::ABL1 AML 仍要求至少 20%。
+- 10%～19% 原始细胞且不满足相关定义性遗传 AML 时，可进入 MDS/AML 类别；20% 阈值仍用于其余 AML。
+- 单基因突变或融合定义的实体优先于 MDS 相关基因突变和 MDS 相关细胞遗传学类别。
+- 治疗相关、由 MDS/MDS-MPN 进展及胚系易感均作为诊断限定词附加，而不是独立 AML 大类。
+- ICC 与 WHO 2022 存在差异，输出必须明确采用 ICC 2022。
+- 输出语言：最终建议使用简体中文。
+
+分支 AML-200：ICC 急性髓系肿瘤初始分类
+适用条件：
+- 急性髓系肿瘤或 MDS/AML 疑似病例，需要确定 ICC 实体。
+关键判断：
+- 原始细胞/原始细胞等效细胞比例是 <10%、10%～19% 还是 ≥20%。
+- 是否存在 AML 定义性重现遗传异常。
+- 是否存在 TP53、MDS 相关基因突变或 MDS 相关细胞遗传学异常。
+- 是否需要附加治疗相关、由 MDS/MDS-MPN 进展或胚系易感限定词。
+输出要求：
+- 依照 ICC 层级给出唯一主实体，并列出影响预后但不改变主实体的并存异常。
+来源定位：Acute myeloid leukemia；Tables 25、26。
+
+分支 AML-201：ICC 定义性遗传 AML 与原始细胞阈值
+适用条件：
+- 检出重现性融合、重排或 NPM1/CEBPA 定义性突变。
+达到 ≥10% 原始细胞即可定义的类别：
+- PML::RARA 及其他 RARA rearrangement。
+- RUNX1::RUNX1T1、CBFB::MYH11、MLLT3::KMT2A 及其他 KMT2A rearrangement。
+- DEK::NUP214、MECOM rearrangement、其他罕见重现易位。
+- NPM1 mutation、in-frame bZIP CEBPA mutation。
+例外：
+- BCR::ABL1 AML 要求 ≥20% 原始细胞，以避免与 CML 进展重叠。
+输出要求：
+- 报告具体异常、原始细胞比例和是否满足 10% 或 20% 阈值。
+来源定位：Table 25。
+
+分支 AML-202：ICC AML 分类层级
+适用条件：
+- 同一病例存在多个可分类遗传异常。
+优先级：
+- 单基因突变或基因融合定义的传统遗传实体优先。
+- 之后考虑 AML with mutated TP53。
+- 再考虑 AML/MDS-AML with myelodysplasia-related gene mutations。
+- 再考虑 AML/MDS-AML with myelodysplasia-related cytogenetic abnormalities。
+- 排除所有遗传类别后，才使用 AML NOS 或 MDS/AML NOS。
+注意：
+- 并存 TP53 或其他高危异常可能影响预后，即使不改变优先级更高的主实体，也应在报告中注明。
+来源定位：Acute myeloid leukemia；Table 25 后分类层级说明。
+
+分支 AML-203：TP53 突变髓系肿瘤连续谱
+适用条件：
+- 检出 TP53 突变，需要在 MDS、MDS/AML 和 AML 间分类。
+分类路径：
+- MDS with mutated TP53：骨髓和外周血原始细胞 0%～9%，通常要求 multi-hit TP53，或 TP53 VAF >10% 且复杂核型等规定证据。
+- MDS/AML with mutated TP53：原始细胞 10%～19%，任一符合要求的体细胞 TP53 突变（VAF >10%）。
+- AML with mutated TP53：原始细胞 ≥20%，或满足纯红系白血病条件；任一符合要求的体细胞 TP53 突变（VAF >10%）。
+解释：
+- 这三个诊断因侵袭性生物学相近而被归入同一疾病家族。
+- 复杂核型但无 TP53 突变不能单独定义 TP53 突变实体。
+来源定位：Table 21；Myeloid neoplasms with mutated TP53。
+
+分支 AML-204：MDS 相关基因突变和细胞遗传学 AML/MDS-AML
+适用条件：
+- 不存在优先级更高的定义性遗传 AML，但存在 MDS 相关异常。
+基因类别：
+- ASXL1、BCOR、EZH2、RUNX1、SF3B1、SRSF2、STAG2、U2AF1、ZRSR2。
+细胞遗传学类别：
+- 复杂核型，del(5q)/t(5q)/add(5q)、-7/del(7q)、+8、12p 异常、i(17q)、-17/17p 异常、del(20q)、idic(X)(q13) 等 ICC 规定异常。
+分类路径：
+- 10%～19% 原始细胞：MDS/AML with corresponding abnormality。
+- ≥20% 原始细胞：AML with corresponding abnormality。
+来源定位：Table 25；Acute myeloid leukemia。
+
+分支 AML-205：治疗相关、进展相关和胚系易感限定词
+适用条件：
+- 存在既往化疗/放疗/免疫干预、既往 MDS/MDS-MPN 或胚系易感。
+输出格式：
+- 先写具体 MDS、MDS/AML 或 AML 主诊断。
+- 再追加“therapy-related”“progressing from MDS”“progressing from MDS/MPN（注明类型）”或“germline predisposition（注明基因/综合征）”。
+注意：
+- 旧的独立 therapy-related myeloid neoplasm 和 AML-MRC 类别被取消。
+- 既往病史不能替代当前形态和遗传分类。
+来源定位：Table 26。
+
+分支 AML-206：MDS/AML 边界类别
+适用条件：
+- 成人细胞减少性髓系肿瘤，骨髓或外周血原始细胞 10%～19%。
+关键判断：
+- 是否已被 ≥10% 阈值的定义性重现遗传异常直接归入 AML。
+- 若未归入定义性 AML，按 TP53、MDS 相关基因、MDS 相关细胞遗传学或 NOS 分为相应 MDS/AML 亚类。
+输出要求：
+- 明确这是 MDS 与 AML 的生物学连续谱类别。
+- 患者应可进入 MDS 或 AML 相关临床试验，但本分类文件不直接规定治疗方案。
+来源定位：MDS/AML；Table 20。
+
+分支 AML-207：克隆性造血、CCUS 与 MDS/AML 的鉴别
+适用条件：
+- 有细胞减少和髓系驱动突变，但形态和原始细胞不足以直接诊断 MDS/AML。
+关键判断：
+- CHIP：髓系驱动基因体细胞突变 VAF ≥2%，但无髓系肿瘤或不能解释的细胞减少。
+- CCUS：持续约 4 个月或更久的特发性细胞减少并有克隆证据，但缺乏 MDS 所需发育异常或原始细胞增加。
+- MDS：持续不能解释的细胞减少并有规定形态发育异常，或存在 MDS 定义性遗传异常。
+- MDS/AML：原始细胞 10%～19%，并满足相应类别。
+输出要求：
+- 不把单独 DNMT3A/TET2/ASXL1 克隆机械解释为 AML。
+来源定位：CCUS and other premalignant clonal cytopenias；MDS definition。
+
+分支 AML-208：ICC 胚系易感分类与移植供者风险
+适用条件：
+- 年轻发病、家族史、先天综合征、血小板病、骨髓衰竭或相关基因提示胚系易感。
+分类框架：
+- 无多器官先天异常：CEBPA、DDX41、TP53。
+- 伴先天血小板疾病：RUNX1、ANKRD26、ETV6。
+- 伴多器官综合征或骨髓衰竭：GATA2、SAMD9、SAMD9L、Fanconi 贫血、Shwachman-Diamond、端粒疾病、重症先天性中性粒细胞减少等。
+- 还包括 NF1/CBL 相关 JMML、Down 综合征及部分 ALL 易感。
+行动：
+- 将胚系基因或综合征作为主肿瘤诊断后的限定词。
+- 相关亲属供者必须排除相同致病胚系变异，避免供者来源 MDS/AML。
+来源定位：Hematologic neoplasms with germline predisposition；Table 24。
+
+分支 AML-209：胚系背景中 MDS/AML 进展的判定
+适用条件：
+- 已知胚系易感，骨髓存在基础发育异常或细胞减少，需要判断是否已进展为 MDS/AML。
+关键判断：
+- 仅有与胚系综合征相关的基线骨髓非典型改变，不足以诊断 MDS。
+- 新发或进行性细胞减少、骨髓细胞密度上升、多系显著发育异常、原始细胞增加或获得性致病遗传异常支持进展。
+- del(5q)、-7/del(7q)、复杂核型、multi-hit TP53 或 SF3B1 等获得性异常需结合具体胚系背景解释。
+- Shwachman-Diamond 综合征中小而稳定的单等位 TP53 克隆不能单独等同 MDS；双等位 TP53 更支持髓系肿瘤。
+来源定位：Diagnosis of MDS in the setting of germline predisposition。
+
+分支 AML-210：伴嗜酸性粒细胞增多和 TK 融合的疾病
+适用条件：
+- AML、ALL、MPAL、髓系肉瘤或慢性髓系表型伴嗜酸性粒细胞增多。
+关键检测：
+- PDGFRA、PDGFRB、FGFR1、JAK2、FLT3 rearrangement 和 ETV6::ABL1。
+分类与提示：
+- 发现 TK 融合时优先归入 M/LN-eo with TK fusion，而不是仅按 AML 形态命名。
+- PDGFRA/PDGFRB 常对 TKI 高度敏感；FGFR1 可考虑 FGFR 抑制策略；FLT3 重排可对特异 FLT3 抑制剂响应；ETV6::ABL1 可对第二代 TKI 响应。
+- JAK2 融合对 ruxolitinib 的反应有限且不一致。
+来源定位：Myeloid/lymphoid neoplasms with eosinophilia and tyrosine kinase gene fusions；Table 10。
+
+分支 AML-211：AML NOS 与残余分类
+适用条件：
+- 原始细胞达到相应阈值，但所有定义性遗传、TP53、MDS 相关基因和细胞遗传学类别均已排除。
+建议：
+- 使用 AML NOS；10%～19% 原始细胞时使用 MDS/AML NOS。
+- 可描述形态或细胞化学亚型，但这些传统亚型不再具有优先分类地位。
+- 纯红系白血病通常并入 AML with mutated TP53。
+来源定位：Acute myeloid leukemia；Table 25 后分类说明。
+
+分支 AML-212：AML 与 MDS/MPN/MPN 进展的鉴别
+适用条件：
+- 存在持续单核细胞增多、白细胞增多、血小板增多、嗜酸性粒细胞增多或既往 MPN/MDS-MPN。
+关键判断：
+- CMML、aCML、MDS/MPN-T-SF3B1、MDS/MPN-RS-T、MDS/MPN NOS、CML 或 MPN 加速/急变期是否更符合。
+- MDS/MPN NOS 要求混合增殖和发育异常、细胞减少、原始细胞 <20%，并排除 BCR::ABL1、M/LN-eo TK 融合及其他定义性异常。
+- 既往 MPN 或高负荷 JAK2/CALR/MPL 倾向支持 MPN 进展，而不是新发 MDS/MPN NOS。
+- 一旦达到 AML 阈值或出现符合 ICC 的 AML 定义性遗传异常，再按层级重新归类。
+来源定位：MDS/MPN；Tables 13–19。
