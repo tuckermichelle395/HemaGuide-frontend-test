@@ -12,3 +12,11 @@
 测试组合包括：中文查询/中文历史库、英文查询/英文历史库、中文查询/英文历史库、英文查询/中文历史库，以及流程图语言交叉组合。详细命中数、命中原文和最终 decision 见 [`docs/language_test_summary.md`](../../docs/language_test_summary.md)。
 
 病例文件为测试用病例，不代表真实临床患者。
+
+运行 6 组语言组合：
+
+```bash
+PYTHON_BIN=.venv/bin/python bash scripts/run_language_comparison.sh
+```
+
+PubMed/Crossref 默认开启；如需只观察病例和流程图影响，可设置 `DISABLE_PUBMED=1 DISABLE_CONFERENCE=1`。结果写入 `results/language_comparison/<时间>/`。

@@ -13,6 +13,12 @@ PYTHON_BIN=.venv/bin/python bash scripts/run_all_tests.sh
 
 可用环境变量：`LLM_MODE`、`LLM_MODEL`、`DECISION_MODEL`、`EMBEDDING_MODE`、`EMBEDDING_MODEL`、`RUN_DIR`、`RUN_LEGACY_SCENARIOS`。
 
+中英文语言对照测试：
+
+```bash
+PYTHON_BIN=.venv/bin/python bash scripts/run_language_comparison.sh
+```
+
 后台运行：
 
 ```bash
