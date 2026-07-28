@@ -54,6 +54,37 @@ ONCOKB_API_KEY=...           # OncoKB API for molecular classification
 CROSSREF_EMAIL=...           # CrossRef API (falls back to PUBMED_EMAIL)
 ```
 
+#### JumpServer Qwen3.6 本地服务配置
+
+语言对照测试的抽取和 decision 都使用本机的 OpenAI 兼容 Qwen3.6 服务，地址固定为 `http://localhost:11433/v1`。在项目根目录执行一次即可持久保存到 `.env`，后续脚本会自动读取：
+
+```bash
+cd ~/project/HemaGuide-frontend-test-github
+cp .env.example .env
+```
+
+如果已有 `.env`，只需确认其中包含：
+
+```dotenv
+OPENAI_API_KEY=local-key
+OPENAI_BASE_URL=http://localhost:11433/v1
+```
+
+确认服务可访问：
+
+```bash
+curl -s "$OPENAI_BASE_URL/models" \
+  -H "Authorization: Bearer $OPENAI_API_KEY"
+```
+
+然后运行中英文病例对照测试：
+
+```bash
+PYTHON_BIN=.venv/bin/python \
+EMBEDDING_MODEL=qwen3-embedding:8b \
+bash scripts/run_language_comparison.sh
+```
+
 The following step is mandatory as we calculate the embeddings ALWAYS locally.
 
 For default mode local Ollama embeddings and `--llm-mode ollama-local`:
