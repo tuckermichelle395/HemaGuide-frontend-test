@@ -5,11 +5,12 @@ set -u
 cd "$(dirname "$0")/.."
 
 PYTHON_BIN="${PYTHON_BIN:-python3}"
-LLM_MODE="${LLM_MODE:-ollama-local}"
-LLM_MODEL="${LLM_MODEL:-qwen3:8b}"
-DECISION_MODEL="${DECISION_MODEL:-$LLM_MODEL}"
+EXTRACTION_LLM_MODE="${EXTRACTION_LLM_MODE:-ollama-local}"
+EXTRACTION_MODEL="${EXTRACTION_MODEL:-qwen3:14b}"
+DECISION_LLM_MODE="${DECISION_LLM_MODE:-openai}"
+DECISION_MODEL="${DECISION_MODEL:-Qwen3.6-27B-UD-Q4_K_XL.gguf}"
 EMBEDDING_MODE="${EMBEDDING_MODE:-ollama}"
-EMBEDDING_MODEL="${EMBEDDING_MODEL:-embeddinggemma:300m}"
+EMBEDDING_MODEL="${EMBEDDING_MODEL:-qwen3-embedding:8b}"
 CASE_ROOT="${CASE_ROOT:-test_data/language_comparison}"
 RUN_DIR="${RUN_DIR:-results/language_comparison/$(date +%Y%m%d_%H%M%S)}"
 DISABLE_PUBMED="${DISABLE_PUBMED:-0}"
@@ -31,7 +32,7 @@ run_case() {
     --kb-dir "$CASE_ROOT/cases/$history_lang/kb" \
     --extracted-data-dir "$extracted_dir" \
     --kb-storage-dir "$kb_storage_dir" \
-    --llm-mode "$LLM_MODE" --extraction-model "$LLM_MODEL" \
+    --llm-mode "$EXTRACTION_LLM_MODE" --extraction-model "$EXTRACTION_MODEL" \
     --embedding-mode "$EMBEDDING_MODE" --embedding-model "$EMBEDDING_MODEL" --rebuild \
     > "$output_dir/build_kb.log" 2>&1
   local code=$?
@@ -43,7 +44,7 @@ run_case() {
   "$PYTHON_BIN" process_query_input.py \
     --query-dir "$CASE_ROOT/cases/$query_lang/query" \
     --extracted-data-dir "$extracted_dir" \
-    --llm-mode "$LLM_MODE" --extraction-model "$LLM_MODEL" --force-extract \
+    --llm-mode "$EXTRACTION_LLM_MODE" --extraction-model "$EXTRACTION_MODEL" --force-extract \
     > "$output_dir/process_query.log" 2>&1
   code=$?
   if [ "$code" -ne 0 ]; then
@@ -56,7 +57,7 @@ run_case() {
     --extracted-data-dir "$extracted_dir"
     --kb-storage-dir "$kb_storage_dir"
     --flowchart-dir "$flowchart_dir"
-    --llm-mode "$LLM_MODE"
+    --llm-mode "$DECISION_LLM_MODE"
     --decision-model "$DECISION_MODEL"
     --output-dir "$output_dir"
   )
