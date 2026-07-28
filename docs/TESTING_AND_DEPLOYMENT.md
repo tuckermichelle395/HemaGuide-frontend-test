@@ -19,7 +19,7 @@ PYTHON_BIN=.venv/bin/python bash scripts/run_all_tests.sh
 PYTHON_BIN=.venv/bin/python bash scripts/run_language_comparison.sh
 ```
 
-语言对照测试的默认模型组合是：抽取 `qwen3:14b`，决策 `Qwen3.6-27B-UD-Q4_K_XL.gguf`（OpenAI 兼容服务），向量 `qwen3-embedding:8b`。运行前设置对应服务地址：
+语言对照测试的默认模型组合是：抽取和决策均使用 `Qwen3.6-27B-UD-Q4_K_XL.gguf`（OpenAI 兼容服务），向量使用 `qwen3-embedding:8b`。运行前设置对应服务地址：
 
 ```bash
 export OPENAI_API_KEY=local-key
