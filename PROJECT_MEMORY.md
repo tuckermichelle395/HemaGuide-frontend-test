@@ -56,6 +56,27 @@ PYTHON_BIN=.venv/bin/python scripts/compare_language_results.py \
 
 ## JumpServer 快速更新
 
+JumpServer 当前复用的 Python 虚拟环境位于相邻项目目录，不在本仓库内：
+
+```text
+~/project/HemaGuide/.venv
+```
+
+在 `~/project/HemaGuide-frontend-test-github` 中使用：
+
+```bash
+source ../HemaGuide/.venv/bin/activate
+PYTHON_BIN=../HemaGuide/.venv/bin/python
+```
+
+后续一键测试优先使用这个解释器：
+
+```bash
+PYTHON_BIN=../HemaGuide/.venv/bin/python \
+EMBEDDING_MODEL=qwen3-embedding:8b \
+bash scripts/run_language_comparison.sh
+```
+
 ```bash
 cd ~/project/HemaGuide-frontend-test-github
 git fetch origin

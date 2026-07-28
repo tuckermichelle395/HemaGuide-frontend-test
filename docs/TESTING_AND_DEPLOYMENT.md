@@ -44,9 +44,16 @@ nohup env PYTHON_BIN=.venv/bin/python LLM_MODE=ollama-local LLM_MODEL=qwen3:8b D
 
 在 JumpServer 上克隆新 GitHub 路径后，创建虚拟环境并安装 `requirements.txt`，确认 Ollama 服务可访问并准备 `qwen3:8b` 与向量模型，然后运行：
 
+当前 JumpServer 实际复用的环境是相邻目录中的 `~/project/HemaGuide/.venv`，在本仓库目录下对应 `../HemaGuide/.venv/bin/python`：
+
 ```bash
-PYTHON_BIN=.venv/bin/python bash scripts/preflight.sh
-PYTHON_BIN=.venv/bin/python bash scripts/run_all_tests.sh
+source ../HemaGuide/.venv/bin/activate
+python -m pip install -r requirements.txt
+```
+
+```bash
+PYTHON_BIN=../HemaGuide/.venv/bin/python bash scripts/preflight.sh
+PYTHON_BIN=../HemaGuide/.venv/bin/python bash scripts/run_all_tests.sh
 ```
 
 不要提交 `.env`、真实病例、抽取结果、知识库和 `results/`；凭据通过 JumpServer 环境变量或未入库的 `.env` 注入。远程上传前还需明确 GitHub 仓库地址、分支和 JumpServer 目录。
